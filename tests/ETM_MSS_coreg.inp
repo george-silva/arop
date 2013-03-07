@@ -1,0 +1,40 @@
+PARAMETER_FILE
+
+# LANDSAT base image 
+BASE_FILE_TYPE = GEOTIFF
+BASE_NSAMPLE = -1
+BASE_NLINE = -1
+BASE_PIXEL_SIZE = -1
+BASE_UPPER_LEFT_CORNER = -1, -1
+BASE_LANDSAT = p016r33_1m19721011_03.tif
+UTM_ZONE = 18
+BASE_SATELLITE = Landsat1
+
+# Landsat warp images
+WARP_FILE_TYPE = GEOTIFF
+WARP_NSAMPLE = -1
+WARP_NLINE = -1
+WARP_PIXEL_SIZE = -1
+# UL coordinate is not trustable, use estimate from base 
+WARP_UPPER_LEFT_CORNER = -1, -1
+# Landsat 1-5, Landsat 7, TERRA, CBERS2 #
+WARP_SATELLITE = Landsat7
+WARP_ORIENTATION_ANGLE = 0.0
+WARP_NBANDS = 6
+WARP_LANDSAT_BAND = p015r033_7t20011005_z18_nn10.tif, p015r033_7t20011005_z18_nn20.tif, p015r033_7t20011005_z18_nn30.tif, p015r033_7t20011005_z18_nn40.tif, p015r033_7t20011005_z18_nn50.tif, p015r033_7t20011005_z18_nn70.tif
+WARP_BASE_MATCH_BAND = p015r033_7t20011005_z18_nn40.tif
+
+# Landsat orthorectied output images
+OUT_PIXEL_SIZE = 57.0
+# NN-nearest neighbor; BI-bilinear interpolation; CC-cubic convolution; AGG-aggregation #
+RESAMPLE_METHOD = AGG
+# BASE-use base map extent; WARP-use warp map extent; DEF-user defined extent #
+OUT_EXTENT = BASE
+OUT_LANDSAT_BAND = coreg_agg.p015r033_7t20011005_z18_nn10, coreg_agg.p015r033_7t20011005_z18_nn20, coreg_agg.p015r033_7t20011005_z18_nn30, coreg_agg.p015r033_7t20011005_z18_nn40, coreg_agg.p015r033_7t20011005_z18_nn50, coreg_agg.p015r033_7t20011005_z18_nn70
+OUT_BASE_MATCH_BAND = coreg_agg.p015r033_7t20011005_z18_nn50
+OUT_BASE_POLY_ORDER = 1
+
+# ancillary input for orthorectification process
+CP_PARAMETERS_FILE = lndortho.MSS.cps_par.ini
+
+END
