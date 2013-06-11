@@ -27,19 +27,6 @@ The development of the AROP package was supported by the U.S. Geological Survey 
 
 ---
 
-   
-You are here: Products & Services /
-
-
-AROP
- 
-Welcome to the software download area! Please contact us	 if you have problems or questions.
-Download Available
-
-Current Version
-
-AROP, Version 2.2.6
-
 Overview
 
   Accurate geo-referencing information is a basic requirement for combining remote satellite imagery with other geographic information. To detect changes in time-series satellite images, it is extremely important for the images to be precisely co-registered and orthorectified, so that images acquired from different sensors and dates can be compared directly. 
